@@ -4,8 +4,8 @@ let app = getApp();
 //内网穿透工具介绍:
 // https://open-doc.dingtalk.com/microapp/debug/ucof2g
 //替换成开发者后台设置的安全域名
-let domain = "http://localhost:3000";
-let url = domain + '/login';
+let domain = "http://net-core.cn:8080";
+let url = domain + '/home/login';
 
 Page({
     data:{
@@ -33,6 +33,7 @@ Page({
                     success: (res) => {
                         // dd.alert({content: "step2"});
                         console.log('success----',res)
+                       
                         let userId = res.data.result.userId;
                         let userName = res.data.result.userName;
                         this.setData({
@@ -63,7 +64,6 @@ Page({
     onLoad(){
 
         let _this = this;
-
         this.setData({
             corpId: app.globalData.corpId
         })
